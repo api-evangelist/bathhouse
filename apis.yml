@@ -1,23 +1,78 @@
 aid: bathhouse
+
 name: Bathhouse
-description: 'Bathhouse is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: http://static1.squarespace.com/static/5f627ccbb290eb31d9234aee/t/69d54e1eee588532aa09eb93/1668716808324/BATHHOUSE_Pools+02_Adrian+Gaut.jpg?format=1500w
+
+description: Bathhouse is a wellness brand operating boutique bathhouse locations offering sauna, steam, cold plunge, massage, and body treatments
+  across major US cities. The company focuses on health, relaxation, and community experiences, providing membership and day‑pass options, as
+  well as retail products. While primarily a physical‑service business, it maintains a digital presence for bookings, information, and community
+  engagement.
+
 url: https://raw.githubusercontent.com/api-evangelist/bathhouse/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
-- Company
-apis: []
+- Wellness
+- Spa
+- Sauna
+- Membership
+- Health
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/bathhouse-hosts.yml
+- type: Vendors
+  url: vendors/bathhouse-vendors.yml
+- type: TermsOfService
+  url: https://www.abathhouse.com/terms-of-service
+- type: Support
+  url: https://help.abathhouse.com/hc/en-us
+- type: PrivacyPolicy
+  url: https://www.abathhouse.com/privacy-policy
+- type: Documentation
+  url: https://help.abathhouse.com/
+- type: DomainSecurity
+  url: security/bathhouse-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/bathhouse_stock/
+  url: https://www.abathhouse.com
+
+apis:
+- name: Bathhouse API
+  description: API documentation hosted on the provider's help site.
+  humanURL: https://help.abathhouse.com/hc/en-us
+  baseURL: null
+  aid: bathhouse:bathhouse-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Help site renders documentation via JavaScript, no machine‑readable spec was found.
+  evidence:
+  - url: https://help.abathhouse.com/hc/en-us
+    status: 403
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
